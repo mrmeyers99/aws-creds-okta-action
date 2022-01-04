@@ -23,6 +23,13 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.aws_role_arn }}
+    - ${{ inputs.okta_username }}
+    - ${{ inputs.okta_password }}
+    - ${{ inputs.okta_app_url }}
+    - ${{ inputs.okta_mfa_seed }}
+    - ${{ inputs.okta_mfa_method }}
 branding:
   icon: 'unlock'  
   color: 'orange'
